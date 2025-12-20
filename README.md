@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hi there, I'm Sarvesh 👋
 
-## Getting Started
+![Banner](public/images/project_ideayaan_abstract.png)
 
-First, run the development server:
+> **Full Stack Developer** crafting high-performance, pixel-perfect web experiences.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+I specialize in building scalable web applications with a focus on modern design, interactivity, and speed. My portfolio showcases a range of projects from immersive 3D web platforms to enterprise-grade dashboards.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   **Frontend**: React, Next.js, TypeScript, Tailwind CSS, Framer Motion, Three.js
+-   **Backend**: Node.js, Express, PostgreSQL, Firebase
+-   **Mobile**: React Native, Expo
+-   **Tools**: Git, Vercel, Figma
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Selected Projects
 
-## Learn More
+### [Ideayaan Studio](https://github.com/ideayaan-stack/studio)
+*Immersive 3D Hackathon Platform*
+-   Built with **React**, **Three.js**, and **Vite**.
+-   Features smooth 3D scene traversal and optimized asset loading.
 
-To learn more about Next.js, take a look at the following resources:
+### [Orbital Flow](https://github.com/Sarvesh2005-code/Orbital-Flow)
+*Productivity Workflow Automation*
+-   Complex node-based editor using **React Flow**.
+-   **Next.js** architecture for server-side performance.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### [Synk](https://github.com/Sarvesh2005-code/Synk)
+*Real-time Synchronization Engine*
+-   High-concurrency backend with **WebSockets** and **Node.js**.
+-   < 50ms latency for collaborative editing.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### [ITMS Dashboard](https://github.com/Sarvesh2005-code/itms-dashboard)
+*Enterprise Management System*
+-   Data-rich dashboard using **Tremor** charts.
+-   Secured with **NextAuth** and **PostgreSQL**.
 
-## Deploy on Vercel
+## 🌐 Connect
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[![Portfolio](https://img.shields.io/badge/Portfolio-sarvy.vercel.app-orange?style=for-the-badge&logo=vercel)](https://sarvy.vercel.app)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Sarvesh%20Nakhale-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/sarveshnakhale)
+[![Email](https://img.shields.io/badge/Email-Contact%20Me-red?style=for-the-badge&logo=gmail)](mailto:sarveshnakhale21@gmail.com)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+© 2025 Sarvesh Dadarao Nakhale
