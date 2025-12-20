@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 const navItems = [
     { name: "Home", href: "/" },
     { name: "Work", href: "/work" },
-    { name: "Contact", href: "/contact" },
+    { name: "Contact", href: "/#contact" },
 ];
 
 export function Navbar() {

@@ -3,53 +3,19 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { projects } from "@/lib/data";
+import { cn } from "@/lib/utils";
 
-const projects = [
-    {
-        id: 1,
-        title: "Eatos",
-        description: "High-performance mobile food delivery app built with React Native and Expo.",
-        tags: ["React Native", "Expo", "Firebase"],
-        link: "#",
-        github: "#",
-        color: "from-orange-500/20 to-red-500/20",
-        size: "col-span-1 md:col-span-2 row-span-2",
-    },
-    {
-        id: 2,
-        title: "Audemars Piguet Clone",
-        description: "Pixel-perfect luxury eCommerce frontend replica with complex animations.",
-        tags: ["Next.js", "GSAP", "Tailwind"],
-        link: "#",
-        github: "#",
-        color: "from-neutral-800/50 to-neutral-900/50",
-        size: "col-span-1 md:col-span-1 row-span-1",
-    },
-    {
-        id: 3,
-        title: "Ideayaan",
-        description: "Immersive 3D-inspired hackathon landing page with smooth scroll & parallax.",
-        tags: ["React", "Three.js", "Framer Motion"],
-        link: "#",
-        github: "#",
-        color: "from-blue-500/10 to-purple-500/10",
-        size: "col-span-1 md:col-span-1 row-span-2",
-    },
-    {
-        id: 4,
-        title: "Float",
-        description: "Web-based game portal featuring parallax effects and mobile responsiveness.",
-        tags: ["Next.js", "Canvas API", "TypeScript"],
-        link: "#",
-        github: "#",
-        color: "from-emerald-500/10 to-teal-500/10",
-        size: "col-span-1 md:col-span-2 row-span-1",
-    },
-];
+interface ProjectsProps {
+    limit?: number;
+    className?: string;
+}
 
-export function Projects() {
+export function Projects({ limit, className }: ProjectsProps) {
+    const displayProjects = limit ? projects.slice(0, limit) : projects;
+
     return (
-        <section id="projects" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <section id="projects" className={cn("py-24 px-6 md:px-12 max-w-7xl mx-auto", className)}>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -57,14 +23,23 @@ export function Projects() {
                 transition={{ duration: 0.5 }}
                 className="flex flex-col gap-4 mb-16"
             >
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
-                    Selected Work
-                </h2>
-                <div className="h-1 w-20 bg-primary rounded-full" />
+                <div className="flex justify-between items-end">
+                    <div>
+                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
+                            Selected Work
+                        </h2>
+                        <div className="h-1 w-20 bg-primary rounded-full mt-4" />
+                    </div>
+                    {limit && (
+                        <Link href="/work" className="hidden md:flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                            View All Projects <ArrowUpRight size={18} />
+                        </Link>
+                    )}
+                </div>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
-                {projects.map((project, index) => (
+                {displayProjects.map((project, index) => (
                     <motion.div
                         key={project.id}
                         initial={{ opacity: 0, y: 20 }}
@@ -85,10 +60,10 @@ export function Projects() {
                                     ))}
                                 </div>
                                 <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
-                                    <Link href={project.github} className="p-2 rounded-full bg-white/10 hover:bg-white/20 hover:text-white text-muted-foreground transition-colors">
+                                    <Link href={project.github} target="_blank" className="p-2 rounded-full bg-white/10 hover:bg-white/20 hover:text-white text-muted-foreground transition-colors">
                                         <Github size={18} />
                                     </Link>
-                                    <Link href={project.link} className="p-2 rounded-full bg-white/10 hover:bg-white/20 hover:text-white text-muted-foreground transition-colors">
+                                    <Link href={project.link} target="_blank" className="p-2 rounded-full bg-white/10 hover:bg-white/20 hover:text-white text-muted-foreground transition-colors">
                                         <ExternalLink size={18} />
                                     </Link>
                                 </div>
@@ -97,16 +72,27 @@ export function Projects() {
                             <div>
                                 <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors flex items-center gap-2">
                                     {project.title}
-                                    <ArrowUpRight className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                                    <ArrowUpRight className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 block md:hidden" />
                                 </h3>
                                 <p className="text-muted-foreground line-clamp-2">
                                     {project.description}
                                 </p>
                             </div>
                         </div>
+
+                        {/* Mobile Touch Ripple / Gradient Hint */}
+                        <div className="md:hidden absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
                     </motion.div>
                 ))}
             </div>
+
+            {limit && (
+                <div className="mt-12 flex justify-center md:hidden">
+                    <Link href="/work" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors">
+                        View All Projects <ArrowUpRight size={18} />
+                    </Link>
+                </div>
+            )}
         </section>
     );
 }
