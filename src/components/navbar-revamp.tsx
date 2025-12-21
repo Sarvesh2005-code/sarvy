@@ -48,11 +48,13 @@ export function NavbarRevamp() {
                     </button>
 
                     <button
-                        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                        onClick={() => {
+                            setTheme(theme === "dark" ? "light" : "dark");
+                        }}
                         className="flex items-center justify-center w-8 h-8 rounded-full bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 transition-colors cursor-pointer"
                         aria-label="Toggle Theme"
                     >
-                        {mounted && theme === 'dark' ? <Moon size={16} /> : <Sun size={18} />}
+                        {mounted && theme === 'dark' ? <Sun size={18} /> : <Moon size={16} />}
                     </button>
 
                     <Link

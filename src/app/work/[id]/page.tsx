@@ -17,9 +17,9 @@ export default async function ProjectDetail({ params }: PageProps) {
         notFound();
     }
 
-    // Fetch live data
-    const stats = await getRepoData(project.repo);
-    const description = stats?.description || project.description;
+    // Static data only
+    const description = project.description;
+    const stats = { stars: 0, forks: 0, homepage: null };
 
     return (
         <main className="min-h-screen bg-background text-foreground pt-32 pb-20">

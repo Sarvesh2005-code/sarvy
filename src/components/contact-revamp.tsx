@@ -17,9 +17,8 @@ export function ContactRevamp() {
         const data = Object.fromEntries(formData.entries());
 
         try {
-            // Using Formspree as a generic endpoint example. 
-            // In production, the user should replace this with their own ID.
-            const response = await fetch("https://formspree.io/f/mqakevrb", {
+            // Using FormSubmit.co for maintenance-free emails.
+            const response = await fetch("https://formsubmit.co/sarveshnakhale21@gmail.com", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -66,7 +65,7 @@ export function ContactRevamp() {
                                 </div>
                                 <div>
                                     <h4 className="text-sm font-bold text-muted-foreground uppercase tracking-wide">Email</h4>
-                                    <p className="text-lg font-medium text-foreground">sarveshnakhale20@gmail.com</p>
+                                    <p className="text-lg font-medium text-foreground">sarveshnakhale21@gmail.com</p>
                                 </div>
                             </div>
 
@@ -81,13 +80,13 @@ export function ContactRevamp() {
                             </div>
 
                             <div className="flex gap-4 mt-4">
-                                <Link href="https://linkedin.com" className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-foreground hover:bg-primary hover:text-white hover:border-primary transition-all">
+                                <Link href="https://www.linkedin.com/in/sarveshnakhale?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-foreground hover:bg-primary hover:text-white hover:border-primary transition-all">
                                     <Linkedin size={20} />
                                 </Link>
-                                <Link href="https://twitter.com" className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-foreground hover:bg-black hover:text-white hover:border-black dark:hover:bg-white dark:hover:text-black transition-all">
+                                <Link href="https://x.com/Sarvyx2005" target="_blank" className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-foreground hover:bg-black hover:text-white hover:border-black dark:hover:bg-white dark:hover:text-black transition-all">
                                     <Twitter size={20} />
                                 </Link>
-                                <Link href="https://github.com" className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-foreground hover:bg-gray-800 hover:text-white hover:border-gray-800 transition-all">
+                                <Link href="https://github.com/Sarvesh2005-code" target="_blank" className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-foreground hover:bg-gray-800 hover:text-white hover:border-gray-800 transition-all">
                                     <Github size={20} />
                                 </Link>
                             </div>

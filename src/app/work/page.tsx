@@ -43,6 +43,11 @@ export default function WorkPage() {
                             A curated collection of applications, websites, and digital experiments crafted with precision and passion.
                         </p>
                     </div>
+                    <div>
+                        <Link href="/" className="px-6 py-3 rounded-full bg-surface border border-border text-foreground font-bold hover:bg-secondary transition-colors inline-block">
+                            &larr; Back to Home
+                        </Link>
+                    </div>
                 </div>
 
                 {/* Controls */}
@@ -64,8 +69,8 @@ export default function WorkPage() {
                                 key={cat}
                                 onClick={() => setFilter(cat)}
                                 className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all ${filter === cat
-                                        ? "bg-primary text-white shadow-lg shadow-primary/25 scale-105"
-                                        : "bg-surface border border-border hover:bg-surface/80 text-muted-foreground hover:text-foreground"
+                                    ? "bg-primary text-white shadow-lg shadow-primary/25 scale-105"
+                                    : "bg-surface border border-border hover:bg-surface/80 text-muted-foreground hover:text-foreground"
                                     }`}
                             >
                                 {cat}

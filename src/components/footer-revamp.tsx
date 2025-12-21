@@ -31,10 +31,10 @@ export function FooterRevamp() {
 
                     <div className="flex flex-col gap-4">
                         <h4 className="font-bold text-foreground text-sm uppercase tracking-wider">Socials</h4>
-                        <Link href="https://linkedin.com" target="_blank" className="text-muted-foreground hover:text-primary transition-colors text-sm">LinkedIn</Link>
+                        <Link href="https://www.linkedin.com/in/sarveshnakhale?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" className="text-muted-foreground hover:text-primary transition-colors text-sm">LinkedIn</Link>
                         <Link href="https://github.com/Sarvesh2005-code" target="_blank" className="text-muted-foreground hover:text-primary transition-colors text-sm">GitHub</Link>
-                        <Link href="https://twitter.com" target="_blank" className="text-muted-foreground hover:text-primary transition-colors text-sm">Twitter</Link>
-                        <Link href="mailto:sarveshnakhale20@gmail.com" className="text-muted-foreground hover:text-primary transition-colors text-sm">Email</Link>
+                        <Link href="https://x.com/Sarvyx2005" target="_blank" className="text-muted-foreground hover:text-primary transition-colors text-sm">Twitter</Link>
+                        <Link href="mailto:sarveshnakhale21@gmail.com" className="text-muted-foreground hover:text-primary transition-colors text-sm">Email</Link>
                     </div>
                 </div>
 
