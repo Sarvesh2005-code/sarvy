@@ -5,9 +5,11 @@ import { ProjectsGrid } from "./projects-grid";
 interface ProjectsProps {
     limit?: number;
     className?: string;
+    title?: string;
+    description?: string;
 }
 
-export async function Projects({ limit, className }: ProjectsProps) {
+export async function Projects({ limit, className, title, description }: ProjectsProps) {
     const displayProjects = limit ? projects.slice(0, limit) : projects;
 
     // Pre-fetch GitHub data using API
@@ -27,5 +29,5 @@ export async function Projects({ limit, className }: ProjectsProps) {
         })
     );
 
-    return <ProjectsGrid projects={projectsWithStats} limit={limit} className={className} />;
+    return <ProjectsGrid projects={projectsWithStats} limit={limit} className={className} title={title} description={description} />;
 }

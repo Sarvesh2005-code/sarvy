@@ -7,7 +7,7 @@ export const projects = [
         description: "Immersive 3D Hackathon Platform",
         image: "project_ideayaan_abstract.png",
         color: "from-blue-500/10 to-purple-500/10",
-        size: "col-span-1 md:col-span-2 row-span-2",
+        size: "featured",
     },
     {
         id: 2,

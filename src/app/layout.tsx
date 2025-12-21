@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/navbar";
+import { NavbarRevamp } from "@/components/navbar-revamp";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sarvesh Nakhale | Full Stack Developer",
-  description: "Building high-performance web products.",
+  title: "Sarvesh Nakhale | Product Designer & Developer",
+  description: "Portfolio of Sarvesh Nakhale - A creative Product Designer & Developer.",
 };
 
 export default function RootLayout({
@@ -26,9 +26,9 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Sarvesh Dadarao Nakhale",
+    "name": "Sarvesh Nakhale",
     "url": "https://sarvy.vercel.app",
-    "jobTitle": "Full Stack Developer",
+    "jobTitle": "Product Designer & Developer",
     "sameAs": [
       "https://github.com/Sarvesh2005-code",
       "https://www.linkedin.com/in/sarveshnakhale"
@@ -38,15 +38,16 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground selection:bg-primary/30 selection:text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground selection:bg-primary/30 selection:text-white font-sans`}
       >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Navbar />
+        <NavbarRevamp />
         {children}
       </body>
     </html>
   );
 }
+
