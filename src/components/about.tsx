@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Briefcase, Calendar } from "lucide-react";
 import Link from "next/link";
 
-export function AboutSection() {
+export function About() {
     return (
         <section id="about" className="w-full max-w-7xl mx-auto py-24 px-4 md:px-8">
             {/* Section Header */}

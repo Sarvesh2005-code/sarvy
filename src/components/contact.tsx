@@ -5,7 +5,7 @@ import { Mail, Loader2, Send, MapPin, Linkedin, Twitter, Github, CheckCircle2 } 
 import Link from "next/link";
 import { useState } from "react";
 
-export function ContactRevamp() {
+export function Contact() {
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

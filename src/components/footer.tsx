@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
-export function FooterRevamp() {
+export function Footer() {
     return (
         <footer className="w-full border-t border-border bg-background py-16 px-4 md:px-8">
             <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">

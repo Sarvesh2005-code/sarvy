@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Code, Palette, Box, Terminal, Users, Zap, MessageSquare, Lightbulb, Brush } from "lucide-react";
 
-export function SkillsRevamp() {
+export function Skills() {
     return (
         <section id="skills" className="w-full max-w-7xl mx-auto py-24 scroll-mt-24 px-4 md:px-0">
             {/* New Serif Header */}

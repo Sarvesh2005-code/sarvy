@@ -34,13 +34,18 @@ interface ProjectsGridProps {
 export function ProjectsGrid({ projects, limit, className, title = "Selected Work", description = "Showcase of my latest development projects." }: ProjectsGridProps) {
     return (
         <section id="work" className={cn("w-full max-w-7xl mx-auto py-24 px-4 md:px-0", className)}>
-            <div className="flex items-end justify-between mb-12">
-                <div>
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-foreground">{title}</h2>
-                    <p className="text-muted-foreground">{description}</p>
+            <div className="flex items-end justify-between mb-20">
+                <div className="text-left">
+                    <h2 className="text-4xl md:text-6xl font-serif font-medium text-foreground mb-6">
+                        Selected <br />
+                        <span className="italic text-primary">Work.</span>
+                    </h2>
+                    <p className="text-xl text-muted-foreground max-w-2xl font-light leading-relaxed">
+                        {description}
+                    </p>
                 </div>
                 {limit && (
-                    <Link href="/work" className="text-primary font-medium hover:underline hidden sm:block">
+                    <Link href="/work" className="text-primary font-medium hover:underline hidden sm:block mb-6">
                         View All Projects
                     </Link>
                 )}
@@ -53,13 +58,13 @@ export function ProjectsGrid({ projects, limit, className, title = "Selected Wor
                         className={cn(
                             "group relative overflow-hidden rounded-[2rem] bg-surface/50 border border-border shadow-sm hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] backdrop-blur-sm",
                             // Custom Bento Logic for 5 items
-                            limit === 5 && index === 0 ? "md:col-span-2 md:row-span-2 md:h-[600px]" :
-                                limit === 5 && index === 1 ? "md:col-span-1 md:row-span-1 md:h-[290px]" :
-                                    limit === 5 && index === 2 ? "md:col-span-1 md:row-span-1 md:h-[290px]" :
-                                        limit === 5 && index === 3 ? "md:col-span-1 md:row-span-2 md:h-[600px]" : // Bottom Left Vertical
-                                            limit === 5 && index === 4 ? "md:col-span-2 md:row-span-2 md:h-[600px]" : // Bottom Right Wide
+                            limit === 5 && index === 0 ? "md:col-span-2 md:row-span-2 h-[300px] md:h-[600px]" :
+                                limit === 5 && index === 1 ? "md:col-span-1 md:row-span-1 h-[250px] md:h-[290px]" :
+                                    limit === 5 && index === 2 ? "md:col-span-1 md:row-span-1 h-[250px] md:h-[290px]" :
+                                        limit === 5 && index === 3 ? "md:col-span-1 md:row-span-2 h-[300px] md:h-[600px]" : // Bottom Left Vertical
+                                            limit === 5 && index === 4 ? "md:col-span-2 md:row-span-2 h-[300px] md:h-[600px]" : // Bottom Right Wide
                                                 // Default fallback
-                                                project.size === 'featured' ? 'col-span-1 md:col-span-2 row-span-2 h-[600px]' : project.size,
+                                                project.size === 'featured' ? 'col-span-1 md:col-span-2 row-span-2 h-[300px] md:h-[600px]' : project.size,
 
                             // Height handling
                             !project.size.includes('row-span') && limit !== 5 && 'h-[300px]'

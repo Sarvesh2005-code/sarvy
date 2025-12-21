@@ -5,7 +5,7 @@ import { ArrowRight, Github, CheckCircle2, Paintbrush, Code2 } from "lucide-reac
 import Link from "next/link";
 import Image from "next/image";
 
-export function HeroRevamp() {
+export function Hero() {
     return (
         <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12 px-4 md:px-8">
 

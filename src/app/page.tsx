@@ -1,26 +1,26 @@
-import { HeroRevamp } from "@/components/hero-revamp";
+import { Hero } from "@/components/hero";
 import { Projects } from "@/components/projects";
-import { SkillsRevamp } from "@/components/skills-section";
-import { AboutSection } from "@/components/about-section";
-import { ContactRevamp } from "@/components/contact-revamp";
-import { FooterRevamp } from "@/components/footer-revamp";
+import { Skills } from "@/components/skills";
+import { About } from "@/components/about";
+import { Contact } from "@/components/contact";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-white transition-colors duration-300">
 
       <div className="flex flex-col items-center w-full">
-        <HeroRevamp />
+        <Hero />
 
         {/* Selected Work */}
         <div className="w-full bg-secondary/30 border-y border-border">
           <Projects limit={5} />
         </div>
 
-        <AboutSection />
-        <SkillsRevamp />
-        <ContactRevamp />
-        <FooterRevamp />
+        <About />
+        <Skills />
+        <Contact />
+        <Footer />
       </div>
     </main>
   );
