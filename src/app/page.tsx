@@ -17,8 +17,8 @@ export default function Home() {
           <Projects limit={3} />
         </div>
 
-        <SkillsRevamp />
         <AboutSection />
+        <SkillsRevamp />
         <ContactRevamp />
         <FooterRevamp />
       </div>

@@ -51,8 +51,9 @@ export function ProjectsGrid({ projects, limit, className, title = "Selected Wor
                     <div
                         key={project.id}
                         className={cn(
-                            "group relative overflow-hidden rounded-3xl bg-surface border border-border shadow-sm hover:shadow-xl transition-all duration-500 h-[400px]",
-                            project.size === 'featured' ? 'col-span-1 md:col-span-2 row-span-2' : project.size
+                            "group relative overflow-hidden rounded-[2rem] bg-surface/50 border border-border shadow-sm hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] backdrop-blur-sm",
+                            project.size === 'featured' ? 'col-span-1 md:col-span-2 row-span-2 h-[600px]' : project.size,
+                            !project.size.includes('row-span') && 'h-[300px]'
                         )}
                     >
                         {/* Background Image */}

@@ -1,86 +1,170 @@
 "use client";
 
-import { Mail, MessageCircle, Send } from "lucide-react";
+import { motion } from "framer-motion";
+import { Mail, Loader2, Send, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
 export function ContactRevamp() {
-    return (
-        <section id="contact" className="w-full max-w-7xl mx-auto py-24 scroll-mt-24 px-4 md:px-0">
-            <div className="bg-surface rounded-3xl p-8 md:p-12 border border-border shadow-2xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-primary/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-primary/20 transition-colors duration-700"></div>
+    const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
-                    <div>
-                        <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full bg-green-500/10 text-green-500 text-xs font-bold uppercase tracking-wider">
-                            <span className="relative flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                            </span>
-                            Responds within 2 hours
-                        </div>
-                        <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-4 text-foreground">Let&apos;s Collaborate</h2>
-                        <p className="text-muted-foreground mb-8 text-lg">
-                            I&apos;m currently accepting new projects. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setStatus("submitting");
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            // Using Formspree as a generic endpoint example. 
+            // In production, the user should replace this with their own ID.
+            const response = await fetch("https://formspree.io/f/mqakevrb", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                setStatus("success");
+                form.reset();
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            setStatus("error");
+        }
+    };
+
+    return (
+        <section id="contact" className="w-full max-w-7xl mx-auto py-24 px-4 md:px-8">
+            <div className="flex flex-col md:flex-row gap-16">
+
+                {/* Left Info */}
+                <div className="flex-1">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-6">
+                            Let's work <span className="italic text-primary">together.</span>
+                        </h2>
+                        <p className="text-muted-foreground text-lg mb-12 max-w-md font-light">
+                            I'm always interested in new projects and opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
                         </p>
 
-                        <div className="bg-secondary p-6 rounded-2xl border border-border mb-8">
-                            <div className="flex items-start gap-4">
-                                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
-                                    <MessageCircle className="text-primary" size={20} />
-                                </div>
-                                <div>
-                                    <p className="text-sm font-medium text-foreground">&quot;Sarvesh transformed our vision into reality. The attention to detail is unmatched.&quot;</p>
-                                    <p className="text-xs text-muted-foreground mt-2">— Alex P., Tech Founder</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col gap-6">
-                            <div className="flex items-center gap-4 text-foreground">
-                                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                        <div className="grid grid-cols-1 gap-6">
+                            <div className="p-6 rounded-2xl bg-surface border border-border flex items-center gap-4 hover:border-primary/50 transition-colors group cursor-pointer">
+                                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                                     <Mail size={20} />
                                 </div>
                                 <div>
-                                    <span className="block text-xs font-bold uppercase text-muted-foreground">Email</span>
-                                    <a href="mailto:hello@sarvesh.com" className="hover:text-primary transition-colors font-medium">hello@sarvesh.com</a>
+                                    <h4 className="text-sm font-bold text-muted-foreground uppercase tracking-wide">Email</h4>
+                                    <p className="text-lg font-medium text-foreground">sarveshnakhale20@gmail.com</p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <form className="flex flex-col gap-5 bg-white/50 dark:bg-black/20 p-6 rounded-2xl border border-white/50 dark:border-white/5 backdrop-blur-sm">
-                        <div className="grid grid-cols-2 gap-5">
-                            <div className="flex flex-col gap-1.5">
-                                <label htmlFor="name" className="text-xs font-bold uppercase text-muted-foreground ml-1">Name</label>
-                                <input type="text" id="name" placeholder="John Doe" className="input-apple" />
+                            <div className="p-6 rounded-2xl bg-surface border border-border flex items-center gap-4 hover:border-primary/50 transition-colors group">
+                                <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 group-hover:scale-110 transition-transform">
+                                    <MapPin size={20} />
+                                </div>
+                                <div>
+                                    <h4 className="text-sm font-bold text-muted-foreground uppercase tracking-wide">Location</h4>
+                                    <p className="text-lg font-medium text-foreground">Pune, India</p>
+                                </div>
                             </div>
-                            <div className="flex flex-col gap-1.5">
-                                <label htmlFor="email" className="text-xs font-bold uppercase text-muted-foreground ml-1">Email</label>
-                                <input type="email" id="email" placeholder="john@example.com" className="input-apple" />
+
+                            <div className="flex gap-4 mt-4">
+                                <Link href="https://linkedin.com" className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-foreground hover:bg-primary hover:text-white hover:border-primary transition-all">
+                                    <Linkedin size={20} />
+                                </Link>
+                                <Link href="https://twitter.com" className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-foreground hover:bg-black hover:text-white hover:border-black dark:hover:bg-white dark:hover:text-black transition-all">
+                                    <Twitter size={20} />
+                                </Link>
+                                <Link href="https://github.com" className="w-12 h-12 rounded-full bg-surface border border-border flex items-center justify-center text-foreground hover:bg-gray-800 hover:text-white hover:border-gray-800 transition-all">
+                                    <Github size={20} />
+                                </Link>
                             </div>
                         </div>
+                    </motion.div>
+                </div>
 
-                        <div className="flex flex-col gap-1.5">
-                            <label htmlFor="subject" className="text-xs font-bold uppercase text-muted-foreground ml-1">What can I help you with?</label>
-                            <select id="subject" className="input-apple appearance-none cursor-pointer">
-                                <option>General Inquiry</option>
-                                <option>Project Proposal</option>
-                                <option>Freelance Work</option>
-                                <option>Design Consultation</option>
-                            </select>
-                        </div>
+                {/* Right Form */}
+                <div className="flex-1">
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="bg-surface p-8 rounded-[2rem] border border-border shadow-2xl shadow-black/5"
+                    >
+                        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                            <div className="flex flex-col gap-2">
+                                <label htmlFor="name" className="text-sm font-bold text-muted-foreground ml-2">Name</label>
+                                <input
+                                    required
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    placeholder="John Doe"
+                                    className="input-apple"
+                                />
+                            </div>
 
-                        <div className="flex flex-col gap-1.5">
-                            <label htmlFor="message" className="text-xs font-bold uppercase text-muted-foreground ml-1">Your Message</label>
-                            <textarea id="message" placeholder="Tell me a bit about your project goals and timeline..." className="input-apple h-32 resize-none"></textarea>
-                        </div>
+                            <div className="flex flex-col gap-2">
+                                <label htmlFor="email" className="text-sm font-bold text-muted-foreground ml-2">Email</label>
+                                <input
+                                    required
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    placeholder="john@example.com"
+                                    className="input-apple"
+                                />
+                            </div>
 
-                        <button type="submit" className="bg-primary hover:bg-primary-dark text-white font-bold py-4 px-6 rounded-xl transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 flex justify-center items-center gap-2 mt-2 group/btn">
-                            Send Message
-                            <Send size={16} className="group-hover/btn:translate-x-1 transition-transform" />
-                        </button>
-                    </form>
+                            <div className="flex flex-col gap-2">
+                                <label htmlFor="message" className="text-sm font-bold text-muted-foreground ml-2">Message</label>
+                                <textarea
+                                    required
+                                    name="message"
+                                    id="message"
+                                    rows={4}
+                                    placeholder="Tell me about your project..."
+                                    className="input-apple resize-none"
+                                />
+                            </div>
+
+                            <button
+                                type="submit"
+                                disabled={status === "submitting" || status === "success"}
+                                className="mt-2 h-14 w-full rounded-xl bg-primary text-white font-bold text-lg hover:bg-primary-dark transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                            >
+                                {status === "submitting" ? (
+                                    <>
+                                        <Loader2 className="animate-spin" /> Sending...
+                                    </>
+                                ) : status === "success" ? (
+                                    <>
+                                        <CheckCircle2 /> Sent Successfully!
+                                    </>
+                                ) : (
+                                    <>
+                                        Send Message <Send size={18} />
+                                    </>
+                                )}
+                            </button>
+                        </form>
+                    </motion.div>
                 </div>
             </div>
         </section>
     );
 }
+
+import { CheckCircle2 } from "lucide-react";
