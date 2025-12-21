@@ -3,13 +3,15 @@
 import { motion } from "framer-motion";
 import { Code, Palette, Box, Terminal, Users, Zap, MessageSquare, Lightbulb, Brush } from "lucide-react";
 
-
 export function SkillsRevamp() {
     return (
         <section id="skills" className="w-full max-w-7xl mx-auto py-24 scroll-mt-24 px-4 md:px-0">
-            <div className="mb-12">
-                <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-4 text-foreground">Skills & Expertise.</h2>
-                <p className="text-lg text-muted-foreground max-w-2xl font-light">
+            {/* New Serif Header */}
+            <div className="mb-20 text-left">
+                <h2 className="text-4xl md:text-6xl font-serif font-medium text-foreground mb-6">
+                    Skills & <br /><span className="italic text-primary">Expertise.</span>
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-2xl font-light leading-relaxed">
                     My technical toolkit is designed for speed and scalability. I combine modern frameworks with timeless design principles.
                 </p>
             </div>

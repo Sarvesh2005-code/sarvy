@@ -29,5 +29,11 @@ export async function Projects({ limit, className, title, description }: Project
         })
     );
 
-    return <ProjectsGrid projects={projectsWithStats} limit={limit} className={className} title={title} description={description} />;
+    return <ProjectsGrid
+        projects={projectsWithStats}
+        limit={limit}
+        className={className}
+        title={title || "Selected Work"}
+        description={description || "A curated selection of projects that define my technical journey."}
+    />;
 }

@@ -14,7 +14,7 @@ export default function Home() {
 
         {/* Selected Work */}
         <div className="w-full bg-secondary/30 border-y border-border">
-          <Projects limit={3} />
+          <Projects limit={5} />
         </div>
 
         <AboutSection />

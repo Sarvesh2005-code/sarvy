@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Loader2, Send, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import { Mail, Loader2, Send, MapPin, Linkedin, Twitter, Github, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -40,7 +40,8 @@ export function ContactRevamp() {
     };
 
     return (
-        <section id="contact" className="w-full max-w-7xl mx-auto py-24 px-4 md:px-8">
+        <section id="contact" className="w-full max-w-7xl mx-auto py-24 px-4 md:px-8 relative">
+            {status === "success" && <SuccessModal onClose={() => setStatus("idle")} />}
             <div className="flex flex-col md:flex-row gap-16">
 
                 {/* Left Info */}
@@ -75,7 +76,7 @@ export function ContactRevamp() {
                                 </div>
                                 <div>
                                     <h4 className="text-sm font-bold text-muted-foreground uppercase tracking-wide">Location</h4>
-                                    <p className="text-lg font-medium text-foreground">Pune, India</p>
+                                    <p className="text-lg font-medium text-foreground">Badegaon, India</p>
                                 </div>
                             </div>
 
@@ -167,4 +168,24 @@ export function ContactRevamp() {
     );
 }
 
-import { CheckCircle2 } from "lucide-react";
+function SuccessModal({ onClose }: { onClose: () => void }) {
+    return (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+            <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                className="bg-surface border border-border p-8 rounded-[2rem] shadow-2xl max-w-sm w-full text-center"
+            >
+                <div className="w-20 h-20 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 size={40} />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
+                <p className="text-muted-foreground mb-8">Thanks for reaching out. I'll get back to you as soon as possible.</p>
+                <button onClick={onClose} className="w-full py-3 rounded-xl bg-primary text-white font-bold hover:bg-primary-dark transition-colors">
+                    Close
+                </button>
+            </motion.div>
+        </div>
+    );
+}

@@ -52,8 +52,17 @@ export function ProjectsGrid({ projects, limit, className, title = "Selected Wor
                         key={project.id}
                         className={cn(
                             "group relative overflow-hidden rounded-[2rem] bg-surface/50 border border-border shadow-sm hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] backdrop-blur-sm",
-                            project.size === 'featured' ? 'col-span-1 md:col-span-2 row-span-2 h-[600px]' : project.size,
-                            !project.size.includes('row-span') && 'h-[300px]'
+                            // Custom Bento Logic for 5 items
+                            limit === 5 && index === 0 ? "md:col-span-2 md:row-span-2 md:h-[600px]" :
+                                limit === 5 && index === 1 ? "md:col-span-1 md:row-span-1 md:h-[290px]" :
+                                    limit === 5 && index === 2 ? "md:col-span-1 md:row-span-1 md:h-[290px]" :
+                                        limit === 5 && index === 3 ? "md:col-span-1 md:row-span-2 md:h-[600px]" : // Bottom Left Vertical
+                                            limit === 5 && index === 4 ? "md:col-span-2 md:row-span-2 md:h-[600px]" : // Bottom Right Wide
+                                                // Default fallback
+                                                project.size === 'featured' ? 'col-span-1 md:col-span-2 row-span-2 h-[600px]' : project.size,
+
+                            // Height handling
+                            !project.size.includes('row-span') && limit !== 5 && 'h-[300px]'
                         )}
                     >
                         {/* Background Image */}
