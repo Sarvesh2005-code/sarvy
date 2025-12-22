@@ -32,12 +32,12 @@ export default function WorkPage() {
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                     <div>
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                                <span className="w-2.5 h-2.5 bg-primary rounded-full animate-pulse"></span>
+                        <Link href="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-6 group">
+                            <div className="w-8 h-8 rounded-full bg-surface border border-border flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all">
+                                <ArrowUpRight className="rotate-[225deg]" size={16} />
                             </div>
-                            <span className="text-sm font-bold uppercase tracking-wider text-primary">Portfolio v25</span>
-                        </div>
+                            <span className="font-medium">Back to Home</span>
+                        </Link>
                         <h1 className="text-5xl md:text-7xl font-serif font-medium tracking-tight mb-6">
                             Selected <br />
                             <span className="italic text-primary">Works.</span>
@@ -45,11 +45,6 @@ export default function WorkPage() {
                         <p className="text-xl text-muted-foreground max-w-2xl font-light leading-relaxed">
                             A curated collection of applications, websites, and digital experiments crafted with precision and passion.
                         </p>
-                    </div>
-                    <div>
-                        <Link href="/" className="px-6 py-3 rounded-full bg-surface border border-border text-foreground font-bold hover:bg-secondary transition-colors inline-block mb-6">
-                            &larr; Back to Home
-                        </Link>
                     </div>
                 </div>
 
