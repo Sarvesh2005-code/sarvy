@@ -1,5 +1,4 @@
 import { projects } from "@/lib/data";
-import { getRepoData } from "@/lib/github";
 import { ArrowLeft, ExternalLink, Github, Star, GitFork, Calendar } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";

@@ -1,5 +1,4 @@
 import { projects } from "@/lib/data";
-import { getRepoData } from "@/lib/github";
 import { ProjectsGrid } from "./projects-grid";
 
 interface ProjectsProps {
