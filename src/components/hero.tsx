@@ -109,8 +109,8 @@ export function Hero() {
                             </div>
 
                             <div>
-                                <h3 className="text-2xl font-bold text-white mb-2">UI Design</h3>
-                                <p className="text-sm text-gray-400 leading-relaxed font-light">Pixel-perfect interfaces focusing on usability and aesthetics.</p>
+                                <h3 className="text-2xl font-bold text-foreground mb-2">UI Design</h3>
+                                <p className="text-sm text-muted-foreground leading-relaxed font-light">Pixel-perfect interfaces focusing on usability and aesthetics.</p>
                             </div>
 
                             <div className="flex items-center gap-3 mt-4">
