@@ -82,13 +82,13 @@ export function Hero() {
                             initial={{ opacity: 0, rotate: -10, x: 50 }}
                             animate={{ opacity: 1, rotate: -6, x: 20 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="absolute top-0 right-0 w-[75%] aspect-[4/5] bg-gradient-to-br from-gray-100 to-gray-200 dark:from-neutral-900 dark:to-neutral-800 rounded-[2rem] border border-white/20 shadow-2xl p-6 flex flex-col justify-between"
+                            className="absolute top-0 right-0 w-[75%] aspect-[4/5] bg-white/20 dark:bg-black/40 backdrop-blur-xl rounded-[2rem] border border-white/20 shadow-2xl p-6 flex flex-col justify-between"
                         >
                             <div className="flex justify-between items-center">
-                                <div className="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center text-foreground">
+                                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-foreground backdrop-blur-md">
                                     <Code2 size={20} />
                                 </div>
-                                <span className="px-2 py-1 rounded-md bg-white dark:bg-black/50 text-[10px] font-bold uppercase tracking-widest border border-white/10">NEW</span>
+                                <span className="px-2 py-1 rounded-md bg-white/20 dark:bg-black/20 text-[10px] font-bold uppercase tracking-widest border border-white/10">NEW</span>
                             </div>
                             <div>
                                 <h3 className="text-3xl font-serif italic text-foreground mb-2">Clean Code</h3>
@@ -102,7 +102,7 @@ export function Hero() {
                             initial={{ opacity: 0, rotate: 10, y: 50 }}
                             animate={{ opacity: 1, rotate: 0, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
-                            className="absolute bottom-10 left-0 w-[70%] aspect-square bg-[#0c0c0c] dark:bg-[#151516] rounded-[2.5rem] border border-white/10 shadow-2xl shadow-black/50 p-6 flex flex-col justify-between"
+                            className="absolute bottom-10 left-0 w-[70%] aspect-square bg-[#0c0c0c]/80 dark:bg-[#151516]/80 backdrop-blur-xl rounded-[2.5rem] border border-white/10 shadow-2xl shadow-black/50 p-6 flex flex-col justify-between"
                         >
                             <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-4">
                                 <Paintbrush size={24} />

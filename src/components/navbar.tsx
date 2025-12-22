@@ -36,7 +36,7 @@ export function Navbar() {
                         <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center text-white font-bold shadow-md group-hover:scale-110 transition-transform">
                             S
                         </div>
-                        <span className="font-bold text-sm tracking-tight hidden sm:block">
+                        <span className="font-serif font-bold text-sm tracking-tight hidden sm:block">
                             Sarvy
                         </span>
                     </Link>
@@ -73,7 +73,12 @@ export function Navbar() {
                             className="md:hidden p-2 text-current z-50 relative"
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         >
-                            {isMobileMenuOpen ? <div className="font-bold text-lg">✕</div> : <Menu size={24} />}
+                            <motion.div
+                                animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                {isMobileMenuOpen ? <div className="font-bold text-lg">✕</div> : <Menu size={24} />}
+                            </motion.div>
                         </button>
 
                         <Link
