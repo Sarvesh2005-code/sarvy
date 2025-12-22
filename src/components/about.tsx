@@ -25,13 +25,16 @@ export function About() {
                         <h3 className="text-2xl font-bold mb-6 text-foreground">The Designer & Developer</h3>
                         <div className="space-y-6 text-muted-foreground leading-relaxed text-lg font-light">
                             <p>
-                                I have always been fascinated by the intersection of design and technology. What started as tweaking HTML on Myspace pages turned into a career crafting enterprise-level applications.
+                                I’m a Computer Science student and web developer who enjoys building real, usable products from scratch.
                             </p>
                             <p>
-                                I believe that good design is invisible. It should just work. My approach combines data-driven insights with creative intuition to build products that are not only beautiful but also accessible and performant.
+                                My journey started with curiosity — tweaking layouts, breaking things, and rebuilding them better. Over time, this evolved into a strong focus on clean architecture, performance, and user-centered design.
                             </p>
                             <p>
-                                When I&apos;m not pushing pixels, you can find me hiking the trails or experimenting with 3D modeling in Blender.
+                                I believe good design should feel effortless and good code should scale without pain. I aim to build systems that are simple on the surface but powerful underneath.
+                            </p>
+                            <p>
+                                Outside of coding, I explore 3D design, UI motion, and product ideas — always thinking about how technology can feel more human.
                             </p>
                         </div>
                     </div>
@@ -40,9 +43,9 @@ export function About() {
                 {/* Right Column - Timeline */}
                 <div className="relative pl-8 border-l border-border/50 space-y-12">
                     {[
-                        { year: "2023 - Present", role: "Senior Product Engineer", company: "TechFlow Systems", desc: "Leading the frontend architecture for the flagship SaaS product. Implemented a new design system reducing development time by 40%." },
-                        { year: "2021 - 2023", role: "Product Designer", company: "Creative Solutions Inc.", desc: "Designed and prototyped user interfaces for mobile applications. Collaborated closely with developers to ensure pixel-perfect implementation." },
-                        { year: "2019 - 2021", role: "Junior Frontend Dev", company: "WebCorp", desc: "Started my professional journey building responsive websites. Mastered HTML, CSS, and vanilla JavaScript during this period." }
+                        { year: "2024 - Present", role: "Independent Developer & Student", company: "Project Work", desc: "Building personal projects, experimenting with SaaS ideas, and strengthening full-stack skills with modern frameworks." },
+                        { year: "2023 - 2024", role: "Frontend & UI Engineering Focus", company: "Self-Driven Learning", desc: "Worked extensively with React, Next.js, Tailwind CSS, and animations. Built multiple dashboards, tools, and portfolio-grade projects." },
+                        { year: "2021 - 2023", role: "Learning & Foundations", company: "Web Development", desc: "Started with HTML, CSS, and JavaScript. Developed strong fundamentals in web development and problem-solving." }
                     ].map((job, index) => (
                         <div key={index} className="relative group">
                             {/* Dot */}

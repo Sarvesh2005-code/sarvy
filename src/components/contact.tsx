@@ -111,7 +111,7 @@ export function Contact() {
                                     type="text"
                                     name="name"
                                     id="name"
-                                    placeholder="John Doe"
+                                    placeholder="Your Name"
                                     className="input-apple"
                                 />
                             </div>
@@ -123,7 +123,7 @@ export function Contact() {
                                     type="email"
                                     name="email"
                                     id="email"
-                                    placeholder="john@example.com"
+                                    placeholder="your@email.com"
                                     className="input-apple"
                                 />
                             </div>
@@ -135,7 +135,7 @@ export function Contact() {
                                     name="message"
                                     id="message"
                                     rows={4}
-                                    placeholder="Tell me about your project..."
+                                    placeholder="Tell me about your project or idea..."
                                     className="input-apple resize-none"
                                 />
                             </div>
