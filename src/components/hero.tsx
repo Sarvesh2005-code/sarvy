@@ -102,7 +102,7 @@ export function Hero() {
                             initial={{ opacity: 0, rotate: 10, y: 50 }}
                             animate={{ opacity: 1, rotate: 0, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
-                            className="absolute bottom-10 left-0 w-[70%] aspect-square bg-[#0c0c0c]/80 dark:bg-[#151516]/80 backdrop-blur-xl rounded-[2.5rem] border border-white/10 shadow-2xl shadow-black/50 p-6 flex flex-col justify-between"
+                            className="absolute bottom-10 left-0 w-[70%] aspect-square bg-white/80 dark:bg-[#151516]/80 backdrop-blur-xl rounded-[2.5rem] border border-white/10 shadow-2xl shadow-black/50 p-6 flex flex-col justify-between"
                         >
                             <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-4">
                                 <Paintbrush size={24} />
