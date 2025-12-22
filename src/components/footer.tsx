@@ -11,7 +11,9 @@ export function Footer() {
                 {/* Brand */}
                 <div className="flex flex-col gap-4">
                     <Link href="/" className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center text-white font-bold">SN</div>
+                        <div className="relative w-8 h-8">
+                            <img src="/logo.png" alt="S" className="object-contain w-full h-full" />
+                        </div>
                         <span className="font-bold text-lg">Sarvesh Nakhale</span>
                     </Link>
                     <p className="text-muted-foreground text-sm max-w-xs font-light">

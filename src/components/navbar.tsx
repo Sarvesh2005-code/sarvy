@@ -33,8 +33,8 @@ export function Navbar() {
             <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4 transition-all duration-300">
                 <div className="w-full max-w-7xl glass-panel rounded-full px-6 py-3 shadow-lg flex items-center justify-between relative z-50 bg-white/70 dark:bg-black/70 backdrop-blur-xl border-white/20 dark:border-white/10">
                     <Link href="/" className="flex items-center gap-2 group" onClick={() => setIsMobileMenuOpen(false)}>
-                        <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center text-white font-bold shadow-md group-hover:scale-110 transition-transform">
-                            S
+                        <div className="relative w-8 h-8 group-hover:scale-110 transition-transform">
+                            <img src="/logo.png" alt="S" className="object-contain w-full h-full" />
                         </div>
                         <span className="font-serif font-bold text-sm tracking-tight hidden sm:block">
                             Sarvy

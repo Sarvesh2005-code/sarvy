@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Sarvy | Sarvesh Nakhale - Product Designer & Developer",
   description: "Portfolio of Sarvesh Nakhale (Sarvy). A creative Product Designer & Developer specializing in modern web apps, 3D interactions, and premium UI/UX.",
+  icons: {
+    icon: "/logo.png",
+  },
   keywords: ["Sarvesh Nakhale", "Sarvesh", "Nakhale", "Sarvy", "Product Designer", "Web Developer", "Next.js Developer", "UI/UX Designer", "Frontend Engineer", "Sarvesh Portfolio"],
   authors: [{ name: "Sarvesh Nakhale", url: "https://sarvy.vercel.app" }],
   openGraph: {
@@ -68,6 +72,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           {children}
+          <Analytics />
         </Providers>
       </body>
     </html>
