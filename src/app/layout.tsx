@@ -35,7 +35,10 @@ export const metadata: Metadata = {
     title: "Sarvesh Nakhale (Sarvy) | Portfolio",
     description: "Product Designer & Developer. View my selected works.",
     creator: "@Sarvyx2005"
-  }
+  },
+  verification: {
+    google: "AjM1KtY1N9k7Kdx7Ub9hsHwkRbq0jA9EC9XpMKTXfjQ",
+  },
 };
 
 import { Providers } from "./providers";
