@@ -115,12 +115,12 @@ export default function WorkPage() {
                                                 <ArrowUpRight size={24} />
                                             </div>
                                         </div>
-                                        <p className="text-slate-300 text-sm line-clamp-2 max-w-lg font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        <p className="text-slate-300 text-sm line-clamp-2 max-w-lg font-light mt-2 mb-4">
                                             {project.description}
                                         </p>
 
-                                        <div className="flex gap-2 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
-                                            {project.tags.slice(1, 3).map(tag => (
+                                        <div className="flex gap-2">
+                                            {project.tags.slice(0, 3).map(tag => (
                                                 <span key={tag} className="px-3 py-1 bg-black/50 backdrop-blur-sm rounded-lg text-xs font-medium text-white/80 border border-white/10">{tag}</span>
                                             ))}
                                         </div>
@@ -139,15 +139,6 @@ export default function WorkPage() {
                         </button>
                     </div>
                 )}
-
-                <div className="mt-20 flex justify-center">
-                    <div className="flex items-center gap-4 py-4 px-8 rounded-full border border-border bg-surface text-sm font-medium hover:border-primary/50 transition-colors cursor-pointer group">
-                        <span>Load More Projects</span>
-                        <svg className="w-4 h-4 group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </div>
-                </div>
             </div>
         </main>
     );
